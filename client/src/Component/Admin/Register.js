@@ -15,7 +15,11 @@ const Register = () => {
     const navigate = useNavigate(); //declares a constant variable named navigate and assigns it the value returned by the useNavigate() hook.
 
     const handleSubmit = (data) => {
-        const serviceData={
+        if(category==""){
+            alert("Please Select a category!")
+        }
+        else{
+             const serviceData={
             category:category,
             name:name,
             description:description,
@@ -25,6 +29,9 @@ const Register = () => {
       }
       console.log(serviceData);
       dispatch(registerService(serviceData))
+            
+        }
+        
       
           };
 
