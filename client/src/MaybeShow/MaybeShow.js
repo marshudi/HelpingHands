@@ -1,5 +1,7 @@
 import React,{ useEffect,useState} from "react";
 import { useSelector } from "react-redux";
+import { useLocation } from "react-router-dom";
+
 
 function getUser() {
     let user = localStorage.getItem("user");
@@ -15,7 +17,13 @@ export const ShowFooter=({children})=>{
     // const user = useSelector((state) => state.users.user);
     const user = getUser() || userFromRedux;
     const [show,setShow]=useState(false);
-   
+    const location = useLocation();
+
+    useEffect(() => {
+        if (location.pathname === "/" || location.pathname === "/login" || location.pathname === "/registration") {
+            localStorage.removeItem("user");
+        }
+    }, [location]);
 
     useEffect(()=>{
 
@@ -39,7 +47,13 @@ export const ShowNavAdmin=({children})=>{
     // const user = useSelector((state) => state.users.user);
     const user = getUser() || userFromRedux;
     const [show,setShow]=useState(false);
-  
+    const location = useLocation();
+
+    useEffect(() => {
+        if (location.pathname === "/" || location.pathname === "/login" || location.pathname === "/registration") {
+            localStorage.removeItem("user");
+        }
+    }, [location]);
 
     useEffect(()=>{
 
@@ -63,7 +77,13 @@ export const ShowNavClient=({children})=>{
     // const user = useSelector((state) => state.users.user);
     const user = getUser() || userFromRedux;
     const [show,setShow]=useState(false);
+    const location = useLocation();
 
+    useEffect(() => {
+        if (location.pathname === "/" || location.pathname === "/login" || location.pathname === "/registration") {
+            localStorage.removeItem("user");
+        }
+    }, [location]);
 
     useEffect(()=>{
 
