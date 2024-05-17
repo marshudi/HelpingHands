@@ -36,7 +36,7 @@ function Profile() {
   const [newpassword, setNewpassword] = useState("");
   const [confirmPassword, setconfirmPassword] = useState("");
   const [userid,setUserId]= useState("");
-  const [pic, setPic] = useState("");
+  const [pic, setPic] = useState(user.pic);
 
 
 
@@ -192,7 +192,7 @@ const handleUpdateUserProfile = () => {
                 <ModalBody>
               <FormGroup>
                 <Label for="pic">Image URL</Label>
-                <Input type="text" name="pic" id="pic" value={user.pic}  onChange={(e)=>setPic(e.target.value)} />
+                <Input type="text" name="pic" id="pic" value={pic}  onChange={(e)=>setPic(e.target.value)} />
             </FormGroup>
            
             
