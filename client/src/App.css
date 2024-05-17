@@ -82,7 +82,7 @@
 /* ################################################# */
 
 /* Footer */
-.footer{
+.footer {
   display: flex;
   background-color: rgb(0, 26, 2);
   height: 95px;
@@ -90,8 +90,11 @@
   align-items: center;
   font-weight: bold;
   color: #ffffff;
-  flex-shrink: 0 ;
-  
+  flex-shrink: 0;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
 }
 
 .main{
